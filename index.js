@@ -44,11 +44,24 @@ io.on('connection', (socket)=>{
 //     socket.send('This is Majharul (Server ==> Client)')
 // },10000);
 
+
+
+//Using Pre define events
 setInterval(()=>{
     let d = new Date();
     let t = d.getTime();
     socket.send(t);
 },1000);
+
+
+//Custom Events
+
+setInterval(()=>{
+    let d = new Date();
+    let t = d.getTime();
+
+    socket.emit('time', t)
+})
 
 
 //Showing Connection Dissconnect 

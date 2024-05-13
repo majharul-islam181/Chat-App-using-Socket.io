@@ -7,7 +7,11 @@
 </head>
 <body>
 
-    <h1 id="time">Hello</h1>
+    <h1 id="time">1</h1>
+    <br>
+    <br>
+    <br>
+    <h1 id="time1">1</h1>
 
 
     <script src="/socket.io/socket.io.js"></script>
@@ -19,6 +23,11 @@
             document.getElementById('time').innerHTML= ''
             document.getElementById('time').innerHTML = msg;
             
+        })
+
+        socket.on('time',(msx)=>{
+
+            document.getElementById('time1').innerHTML = msx;
         })
 
 
