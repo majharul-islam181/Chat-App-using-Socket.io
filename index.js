@@ -30,7 +30,28 @@ const io = new Server(expressServer);
 
 */
 
+
+
+
+
+
+
+
 io.on('connection', (socket)=>{
+
+//Server to Client Data Transfer
+// setTimeout(()=>{
+//     socket.send('This is Majharul (Server ==> Client)')
+// },10000);
+
+setInterval(()=>{
+    let d = new Date();
+    let t = d.getTime();
+    socket.send(t);
+},1000);
+
+
+//Showing Connection Dissconnect 
     console.log('New user Connected'),
 
     socket.on('disconnect', ()=>{
@@ -47,6 +68,6 @@ app.get('/', (req,res)=>{
 })
 
 expressServer.listen(3000,function(){
-    console.log("Server is running")
+    console.log("Server is running, http://localhost:3000")
 })
 

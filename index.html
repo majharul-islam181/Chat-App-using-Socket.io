@@ -7,12 +7,19 @@
 </head>
 <body>
 
-    <h1>Hello</h1>
+    <h1 id="time">Hello</h1>
 
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
+        
+        socket.on('message',(msg)=>{
+            // document.write(msg);
+            document.getElementById('time').innerHTML= ''
+            document.getElementById('time').innerHTML = msg;
+            
+        })
 
 
 
